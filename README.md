@@ -6,7 +6,7 @@ Notifications for long-running ipython commands
 Installation
 ------------
 
-Copy `ipy_notify.py` to `~/.ipython/extensions/`.
+Symlink `ipy_notify.py` to `~/.ipython/extensions/`.
 
 Usage
 -----

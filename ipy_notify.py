@@ -5,7 +5,7 @@ import os
 import subprocess
 
 NOTIFY_SCRIPT = IPython.display.HTML("""
-<script>
+<script id="notification-script">
 if (Notification.permission == 'granted') {
     var notification = new Notification("IPython command finished", {
         icon: "http://icons.iconarchive.com/icons/cornmanthe3rd/plex/512/Other-python-icon.png",
@@ -14,6 +14,9 @@ if (Notification.permission == 'granted') {
     notification.onclick = function () {
         window.focus();
     }
+    // don't execute again if we open the window again
+    var script = document.getElementById("notification-script");
+    script.parentElement.removeChild(script);
 }
 </script>
 """)
